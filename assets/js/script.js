@@ -1,10 +1,22 @@
 $('#currentDay').text(moment().format('ll'));
 
-const hours = ['9:00 AM','10:00 AM','11:00 AM','12:00 PM','1:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM'];
+const hours = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
-hours.forEach(hour => {
-    let row = $('div',{'class':'row'});
+let description = $('.description');
+let currentHour = moment().hour();
+let saveBtn = document.querySelectorAll(".saveBtn");
 
-    $('.container').append.row;
-});
-
+for (var i = 9; i < 18; i++) {
+    if (currentHour === hours [i]) {
+        console.log(i);
+        document.getElementById(i).classList.add('present');
+    }
+    if (currentHour < hours[i]) {
+        console.log(i);
+        document.getElementById(i).classList.add('past');
+    }
+    if (currentHour < hours[i]) {
+        console.log(i);
+        document.getElementById(i).classList.add('future');
+    }
+}
