@@ -1,12 +1,12 @@
 $('#currentDay').text(moment().format('lll'));
 
-let hours = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
+let hours = [9, 10, 11, 12, 13, 14, 15, 16, 17,];
 
 let description = $('.description');
 let currentHour = moment().hour();
 
 
-for (var i = 0; i < 10; i++) {
+for (var i = 0; i < 9; i++) {
     if (currentHour === hours [i]) {
         document.getElementById(i).classList.add('present');
     }
@@ -21,7 +21,7 @@ for (var i = 0; i < 10; i++) {
 
 $('.saveBtn').on('click', function () {
     let text = $(this).siblings('.input').val();
-    let time = $(this).siblings('.hour').text;
+    let time = $(this).siblings('.hour').text();
     
     localStorage.setItem(time, text);
     console.log('test');
@@ -29,6 +29,6 @@ $('.saveBtn').on('click', function () {
 });
 
 
-for (var i = 0; i <10; i++) {
+for (var i = 0; i <9; i++) {
     $(`.hour-${i}`).val(localStorage.getItem(`hour-${i}`));
 }
